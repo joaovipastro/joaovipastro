@@ -1,0 +1,14 @@
+{
+  "name": "mise-en-place-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "pdf": "node scripts/pdf.mjs",
+    "serve": "npx http-server dist -p 8080 -c-1",
+    "test": "node scripts/test-session.mjs"
+  },
+  "devDependencies": {
+    "marked": "12.0.2"
+  }
+}

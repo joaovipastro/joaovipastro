@@ -1,0 +1,40 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Send visitors to their language on the root URL.
+[[redirects]]
+  from = "/"
+  to = "/pt/"
+  status = 302
+  force = true
+  conditions = { Language = ["pt"] }
+
+[[redirects]]
+  from = "/"
+  to = "/es/"
+  status = 302
+  force = true
+  conditions = { Language = ["es"] }
+
+[[redirects]]
+  from = "/"
+  to = "/en/"
+  status = 302
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/members/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+    Cache-Control = "private, no-store"

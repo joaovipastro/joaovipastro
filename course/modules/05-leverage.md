@@ -23,9 +23,25 @@ Leverage means getting more result from less of your own effort. It isn't about 
 
 ---
 
-## The four levers
+## Start with the 80/20 map
 
-For any recurring piece of work, there are four options other than doing it yourself forever.
+Before deciding what to change, find where your results actually come from. Weaver's suggestion is to look at your business through the 80/20 lens, in two directions:
+
+1. **Which few clients, products or activities produce most of your revenue or results?**
+2. **Which ones take most of your time?**
+
+Put the two lists side by side. The interesting cases are the mismatches: the high-value client you rarely speak to, the menu item that sells little but takes the most prep, the account that absorbs your week and returns very little.
+
+| | Produces a lot | Produces little |
+|---|---|---|
+| **Takes a lot of my time** | Protect and systemise | Simplify, renegotiate, or stop |
+| **Takes little of my time** | Give it more attention — this is where growth hides | Leave it alone |
+
+For a luxury travel business, this often reveals that a handful of advisors or agencies drive most bookings, and deserve far more personal attention than they get. For a coffee shop, it often shows that a few drinks and a few hours of the day carry the margin.
+
+## The five levers
+
+For any recurring piece of work, there are five options other than doing it yourself forever.
 
 ### 1. Stop
 
@@ -64,6 +80,16 @@ A good handover has five parts:
 
 Notice that the first two are the same questions you ask yourself. You're not handing over a task. You're handing over a Result, with its Reason attached. That's what lets people use judgement instead of waiting for instructions.
 
+### 5. Borrow
+
+Some work is slow because you're working it out from scratch. Robbins calls learning from people who've already succeeded the most powerful way to compress time: trial and error costs years; a good model costs a conversation or a book. Before starting anything new, ask: *"Who has already done this well, and what can I learn from them?"*
+
+Examples: a fellow owner who's already opened a second location. A commercial director who's built an advisor programme in another market. A roaster whose wholesale model you admire. One well-prepared lunch can save you a season.
+
+### Close the loop
+
+Stack makes a point worth keeping: leverage isn't a one-off clear-out. Systems drift, bottlenecks move and new work creeps in. Once a quarter, look again at where work gets stuck, waiting on you or on someone else, and fix the bottleneck rather than working around it.
+
 ---
 
 ## Find your only-you work
@@ -84,6 +110,10 @@ For a coffee shop owner: sourcing relationships, the menu and the guest experien
 
 ---
 
+## Exercise 5.0 — Your 80/20 map
+
+List your top ten clients, products or activities by results, and your top ten by time spent. Fill in the four-box map in the [Leverage Ledger](../tools/leverage-ledger.md). Write one decision for each box.
+
 ## Exercise 5.1 — The time audit
 
 Look at your calendar and your Reactivity Audit notes from Module 2. List everything you spent time on in a typical recent week. Aim for 20–40 items.
@@ -92,7 +122,7 @@ For each, estimate hours per week, then mark it:
 
 | Activity | Hrs/wk | Only me? | Lever |
 |---|---|---|---|
-| | | Y / N | Keep / Stop / Simplify / Systemise / Hand over |
+| | | Y / N | Keep / Stop / Simplify / Systemise / Hand over / Borrow |
 
 Total the hours in each column.
 

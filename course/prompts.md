@@ -1,6 +1,6 @@
 # Thinking-Partner Prompts
 
-Fifty prompts for working through the method with an AI assistant, a coach or a trusted colleague. Paste your own notes in where you see brackets.
+Sixty prompts for working through the method with an AI assistant, a coach or a trusted colleague. Paste your own notes in where you see brackets.
 
 A general instruction that helps with any AI tool: *"Act as an experienced executive coach. Ask me questions before giving advice. Challenge my assumptions where they're weak. Keep your answers short."*
 
@@ -79,3 +79,16 @@ A general instruction that helps with any AI tool: *"Act as an experienced execu
 48. Help me teach the three questions to my team in a 20-minute meeting. Draft the agenda.
 49. Turn this team goal into a Result, Reason and Route the whole team can see and own: [goal].
 50. Here's a project one of my team is struggling with: [description]. Help me coach them through the three questions instead of giving them the answer.
+
+## Drawing on the books
+
+51. Here's a Result I keep putting off: [result]. Help me write both sides of the Reason — what I gain if I do it, and what it costs me over a year if I don't.
+52. Run my capture list through the 6-D sort — Discard, Delegate, Do, Date, Drawer, Deter: [list].
+53. Triage today's list into P1–P4 and tell me which P2 I must protect: [list].
+54. Help me draft a Not-To-Do list for someone in my role: [role]. Then challenge me on which items I'll find hardest to keep.
+55. Help me say no to this request, warmly and clearly, in under 60 words: [request].
+56. Here are my top clients by revenue and by time spent: [lists]. Build my 80/20 map and suggest one decision per box.
+57. Who could I learn from to shortcut this goal? Suggest the kinds of people, books or businesses to study: [goal].
+58. Something has gone wrong: [situation]. Walk me through the five problem-solving questions, one at a time.
+59. Help me rank my values and write rules for each that make it easy to feel I'm living them.
+60. Guide me through a three-minute morning rehearsal of today's three Results: [results].

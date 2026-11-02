@@ -40,6 +40,10 @@ Time stretches and shrinks with your state. When you're anxious, scattered or ov
 
 This matters for planning because so many people describe themselves as "having no time." Sometimes that's literally true. More often, it's a description of a state — overwhelmed, reactive, unclear — rather than a fact about the calendar. And a state can change faster than a calendar can.
 
+Tracy Weaver draws a helpful line between *clock time*, which is the same for everyone, and *actual time* — the time you live in, which speeds up or crawls depending on what you're doing and where your attention is. Most time management tools try to control clock time. Your life happens in actual time.
+
+Robbins adds a further point in *Awaken the Giant Within*: a lot of stress comes from being stuck in one time frame. Some people are buried in the present — every request, every message, all at once. Others keep replaying a past mistake, or picturing a future that goes wrong. Often the fix isn't more hours. It's moving your attention: from the noise of today to the future you're building, or from a dreaded future back to the one thing you can do right now.
+
 Two practical implications:
 
 1. **Clarity creates time.** When you know exactly what you want from the next two hours and why, decisions get faster, distractions get easier to refuse, and the work takes less time.
@@ -61,6 +65,29 @@ Most working days are a mix of two modes:
 Nobody lives entirely in the right-hand column. Hospitality and sales in particular involve genuine responsiveness — a guest needs something, a client has a question, a supplier is late. That's the job.
 
 The aim isn't to stop responding. It's to make sure that responding is something you *chose* to do with a block of your time, not the default state of every hour.
+
+### Overwhelm is a message
+
+In *Awaken the Giant Within*, Robbins treats feelings like overwhelm as signals, not verdicts. Overwhelm usually means one thing: you're trying to deal with everything at the same moment. The answer is almost never to work harder. It's to choose. Write down everything pressing on you, pick the single most important item, and do only that until it moves. Then pick the next one.
+
+You'll notice that this is a miniature version of the weekly ritual in Module 4. Overwhelm is simply the feeling of not having done it.
+
+---
+
+## The list nobody writes
+
+Laura Stack, in *What to Do When There's Too Much to Do*, makes a case that most productivity advice ignores: the fastest way to get more done is to do less. Her approach is built on *reduction* — cutting commitments, tasks and time-wasters before trying to work faster.
+
+Her simplest tool is the **Not-To-Do list**: a written list of the things you've decided you will no longer do. It works because decisions made in advance are much easier to keep than decisions made under pressure. When the request arrives, you've already answered it.
+
+A Not-To-Do list might include:
+
+- Checking messages before my first protected block
+- Joining a meeting with no agenda or clear outcome
+- Re-doing work I've delegated, instead of giving feedback
+- Answering supplier messages after 19:00
+- Discounting to win a client who doesn't fit our positioning
+- Saying yes on the spot to anything that takes more than an hour
 
 ---
 
@@ -93,6 +120,18 @@ At the end of the week, read all fifteen answers together. Look for patterns:
 - What conditions were present when you felt in control?
 
 Write down the three patterns you notice. They'll shape the schedule you build in Module 6.
+
+## Exercise 2.3 — Your first Not-To-Do list
+
+Using the list autopsy and the Reactivity Audit, write at least seven things you will stop doing. Include:
+
+- Two time-wasting habits of your own
+- Two kinds of request you'll stop accepting automatically
+- One thing you do out of guilt or habit rather than value
+- One boundary on when you'll be reachable
+- One thing you'll stop doing that someone else should be doing
+
+Keep the list where you plan your week. Add to it whenever you catch yourself doing something you've already decided against.
 
 ---
 

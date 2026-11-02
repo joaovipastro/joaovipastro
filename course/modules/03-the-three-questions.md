@@ -76,6 +76,25 @@ People skip this question because it feels soft. It's the most practical of the 
 
 That's a Result you'll get done.
 
+### Both sides of the ledger
+
+Robbins' central argument in *Awaken the Giant Within* is that people act to gain pleasure and, even more strongly, to avoid pain. We put things off when doing them feels more uncomfortable than not doing them. We change when that balance flips.
+
+So a complete Reason looks at both sides:
+
+- **What I gain** if I achieve this
+- **What it costs me** if I don't — not just this week, but if the pattern continues for a year, or five
+
+Tracy Weaver makes the same point as a daily habit: before starting work, ask why these tasks matter to you, which goals they move you towards, and what it will cost you if they don't get done.
+
+Use the cost side with care. A little of it gets you moving. Too much, and planning becomes an exercise in fear. Lead with what you want; use what you want to avoid as the push when the pull isn't enough.
+
+### Check it against your values
+
+A Result can be well written and still feel strangely flat. Often that's because it doesn't connect to anything you value deeply. Robbins suggests ranking your values — the states you most want to feel, such as freedom, security, connection, achievement or adventure — and noticing which ones drive your decisions.
+
+You don't need a full values exercise now (Module 7 includes one). For any Result that lacks energy, just ask: *"Which of the things I care about most does this serve?"* If the answer is *none*, either find the connection or let the Result go.
+
 ### "Have to" into "get to"
 
 A useful test: try saying *"I get to…"* in front of your Result. *"I get to build the menu for our busiest season."* If it sounds false, look for a better Reason, or ask whether this Result is truly yours.
@@ -115,6 +134,12 @@ Only now do you think about actions. And because you know exactly what you want 
 
 You will always be able to think of more actions. The skill is in seeing which few will produce most of the result, and giving those your best hours. Everything else is optional until the musts are done.
 
+This is the 80/20 principle, which Weaver's short book puts at the centre of time management: a small share of what you do produces most of what you get. Ask of every Route: *"If I could only do two of these, which two?"*
+
+### Before every meeting
+
+Weaver offers a simple discipline that applies the three questions to meetings: before any meeting or call, take two minutes to get clear on the outcome. If it's someone else's meeting and the outcome isn't clear, ask them before it starts. *"So I can prepare properly — what would you like us to leave with?"* Meetings with a clear Result are shorter and better.
+
 ---
 
 ## Exercise 3.1 — Three plans
@@ -132,9 +157,12 @@ RESULT
 (One sentence. Outcome, specific, yours, right-sized.)
 
 REASON
+What I gain:
 - 
 - 
+What it costs me if I don't:
 - 
+Which of my values it serves:
 - 
 
 ROUTE

@@ -58,6 +58,9 @@ Focus isn't a personality trait. It's a set of conditions you can arrange.
 - **Group similar work.** Calls with calls, writing with writing, admin with admin. Switching between types of work is expensive.
 - **Clear the surface.** Close everything not needed for this Result. Phone face down, in another room if possible.
 - **Finish on a visible step.** Stop each block by writing the very next action. Starting again becomes easy.
+- **Single-task in 45-minute rounds.** Weaver's method: choose the most important item from your plan, gather everything you need, set a timer for 45 minutes and work only on that. Take a short break, then start the next round if needed. If someone interrupts, give a time limit straight away: *"I have one minute — can it wait until 11?"*
+- **Use the ten-minute gaps.** Waiting rooms, late calls, the quiet ten minutes before a shift. Keep a short list of ten-minute tasks (a note to an advisor, a supplier quote to read, one page of a book) so these gaps go to something useful rather than to the phone.
+- **Name your distractions.** Stack separates external distractions (people, notifications, noise) from internal ones (wandering, worry, the urge to check). They need different fixes. Externals need boundaries; internals need a notepad beside you, so a stray thought can be written down and dealt with later.
 
 ---
 
@@ -67,13 +70,47 @@ Two people with the same plan and the same calendar will get very different resu
 
 You can't control every circumstance. You can learn which small things reliably bring you back to your best state — and use them on purpose, rather than waiting to feel better.
 
+### The foundations
+
+Stack calls this *managing your capacity*, and she starts with the unglamorous basics: sleep, food, movement and happiness. No technique compensates for six hours' sleep and a lunch eaten at the desk. Before adding anything clever, check the foundations:
+
+- Are you sleeping seven hours most nights?
+- Are you eating properly before demanding work, not after?
+- Are you moving your body most days?
+- Are there regular moments of real enjoyment in your week?
+
+### Three levers on state
+
+**1. Your body.** Posture, breathing and movement change how you feel faster than thinking does. A walk, ten slow breaths or simply standing up and resetting your shoulders will often do more than any argument with yourself.
+
+**2. Your focus — and the questions you ask.** Robbins argues in *Awaken the Giant Within* that we're always asking ourselves questions, and that the quality of those questions shapes how we feel. *"Why does this always happen to me?"* produces one state. *"What can I learn from this, and what's the next step?"* produces another. When something goes wrong, try this sequence (adapted from his problem-solving questions):
+
+> 1. What's useful about this, or what could be?
+> 2. What isn't right yet?
+> 3. What am I willing to do to put it right?
+> 4. What am I willing to stop doing?
+> 5. How can I make the process enjoyable while I fix it?
+
+**3. Your heart rate.** Dispenza, in *Becoming Supernatural*, builds his practices around what he calls heart coherence — slowing the breath, placing attention on the area of the heart, and deliberately feeling an elevated emotion such as gratitude or care for a few minutes. Set aside the larger claims in his book (see the [sources note](../sources.md)). The practical core — slow breathing with a warm emotional focus — is one of the most reliable small plates you can use before a difficult conversation or a demanding block of work.
+
+**A two-minute version:**
+
+1. Sit or stand still. Bring your attention to the centre of your chest.
+2. Breathe slowly, about five seconds in and five seconds out, as if the breath moved through that area.
+3. Bring to mind something or someone you're genuinely grateful for. Let yourself feel it, not just think it.
+4. Hold that for ten breaths. Then begin.
+
+### Break the automatic
+
+Dispenza's broader point is one worth keeping: most of our days run on automatic. The same route, the same reactions, the same feelings about the same people. That's efficient, but it also means tomorrow tends to look exactly like yesterday. Part of changing your results is noticing the automatic patterns — the sigh before opening the inbox, the irritation before a certain call — and choosing a different response on purpose.
+
 ### Your Restoratives Menu
 
 A Restoratives Menu is a short, personal list of things that reliably lift your state. Like a restaurant menu, it's organised by size, so there's always something that fits the moment.
 
 | Size | Time | Examples |
 |---|---|---|
-| **Small plates** | 1–5 minutes | Ten slow breaths. Step outside. A glass of water. One song, loud. A message to someone you love. Standing at the window with an espresso, no phone. |
+| **Small plates** | 1–5 minutes | The two-minute heart breath. Ten slow breaths. Step outside. A glass of water. One song, loud. A message to someone you love. Standing at the window with an espresso, no phone. |
 | **Mains** | 15–60 minutes | A walk without headphones. A training session. Cooking. Reading something unrelated to work. A call with a friend. |
 | **Tasting menus** | Half a day or more | A morning in nature. A long lunch with no agenda. A day trip. A tasting at a roaster you admire. |
 

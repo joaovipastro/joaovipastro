@@ -40,24 +40,61 @@ Examples:
 
 Notice that none of these depend on circumstances outside your control. That's deliberate. If your rules for winning are all about outcomes you can't guarantee, you'll spend most of your life losing. Rules you can meet regularly create momentum, and momentum is what produces the big outcomes in the end.
 
+This idea comes from Robbins' chapter on rules in *Awaken the Giant Within*. His observation is that many unhappy people have built rules that make feeling good almost impossible (*"I'm only successful if every month beats the last"*) and feeling bad very easy (*"If one client complains, I've failed"*). His advice: design rules that make it easy to feel good and hard to feel bad. He also notes that almost every upset with another person is a clash of rules — they broke one of yours, often without knowing it existed. Telling your team, partner or clients what your standards are prevents a great deal of friction.
+
+### Exercise 7.1b — Your values, in order
+
+Rules sit on top of values. Write down the states you most want to experience in life: for example freedom, security, love, achievement, adventure, calm, growth, contribution, recognition. Then rank your top six.
+
+Ask two questions of the ranking:
+
+1. Does the order explain the decisions I've been making?
+2. Is this the order that will build the life on my Life Map — or does something need to move up?
+
+Then write the opposite list: the states you most want to avoid (rejection, failure, boredom, conflict, loss of control). These often drive us more than we admit. Knowing them helps you understand why you hesitate where you do.
+
 ---
 
 ## Daily rituals
 
 Keep these short. A ritual you can do on your worst day is better than an ideal one you skip.
 
-### Morning (10–15 minutes)
+### Morning (15–20 minutes)
 
 1. **Small plate** from your Restoratives Menu — before the phone
-2. **Read your Life Map** — 90 seconds
-3. **Gratitude** — three specific things, written down
-4. **Daily Card** — three Results, their musts, your protected block
+2. **Morning questions** — two minutes, in the shower or with the first coffee
+3. **Read your Life Map** — 90 seconds
+4. **Rehearse** — three to five minutes (see below)
+5. **Daily Card** — three Results, their musts, your protected block
+
+**Morning questions.** Robbins uses a set of morning questions to start the day in a good state rather than a worried one. Here's a shorter version in the same spirit. Find a real answer to each, and let yourself feel it:
+
+- What am I grateful for right now?
+- What am I looking forward to today?
+- What am I proud of — recently, or in general?
+- Who do I love, and who loves me?
+- What am I committed to making happen today?
+
+If an answer won't come, ask *"What **could** I be grateful for?"* The answer is always there.
+
+**Rehearse.** This is the most useful practical idea in Dispenza's *Becoming Supernatural*. Rather than waiting for a result to feel good, he asks you to feel the emotions of it first — to mentally rehearse the person you want to be and the day you want to have, until it feels familiar. Athletes and performers have used mental rehearsal for a long time.
+
+A simple version:
+
+1. Sit quietly. Take five slow breaths.
+2. Picture your three Results for today, done well. See the scene — the meeting, the shift, the conversation.
+3. Picture yourself in it, at your best: calm, clear, generous. How do you stand? How do you speak?
+4. Let yourself feel how it will feel when it's done: relief, pride, satisfaction.
+5. Then open your eyes and carry that version of yourself into the first must.
+
+Dispenza also teaches a walking version of this: eyes open, carrying the feeling of your future self through an ordinary walk. It's a good way to bring the practice into the day, rather than leaving it in the chair.
 
 ### Evening (5 minutes)
 
 1. **Close the day** — tick what's done, move what isn't
-2. **One win** — write down one thing that went well, however small
-3. **Tomorrow's first action** — so the morning starts with a decision already made
+2. **Three questions** (adapted from Robbins' evening questions): *What did I give today? What did I learn? How did today invest in the future I want?*
+3. **One win** — write down one thing that went well, however small
+4. **Tomorrow's first action** — so the morning starts with a decision already made
 
 ---
 
@@ -91,6 +128,7 @@ This is where the whole system is recalibrated. Use the [Quarterly Review templa
 6. **Write a Reason and a high-level Route** for each.
 7. **Update** your time targets, Leverage Ledger and Restoratives Menu.
 8. **Book** your weekly sessions and next Quarterly Review.
+9. **Optional — make a vision reel.** Dispenza's students make short "mind movies" of the future they want: images, a few words, music. A plainer version works well: a two-minute slideshow on your phone, one image and one line for each quarterly Result. Watch it before your morning rehearsal. Remake it each quarter.
 
 ---
 
@@ -109,6 +147,18 @@ When you notice you've drifted:
 3. **One must** — the single most important action for tomorrow, in the calendar
 
 That's it. Don't try to catch up on everything you missed. Next week, do a full Weekly Mise en Place as normal.
+
+### The ten-day reset
+
+When the problem is your state rather than your schedule — a run of frustration, cynicism or low energy — try a ten-day mental reset, adapted from the challenge Robbins sets at the end of Part One of *Awaken the Giant Within*:
+
+1. For ten consecutive days, don't dwell on unhelpful thoughts or feelings. Noticing them is fine; staying with them for more than a couple of minutes is the thing to catch.
+2. When you catch yourself, change your state at once — a small plate, the problem-solving questions from Module 6, or the heart breath.
+3. Keep your attention on solutions. When a problem appears, the first question is *"What could I do about this?"*
+4. Do the morning questions every day.
+5. If you slip into dwelling for longer than a few minutes, start the ten days again. No blame; just begin again.
+
+Robbins is clear that the rule of restarting is what makes it work. Most people are surprised how many times they restart in the first attempt — and how much lighter they feel by the end.
 
 ### Avoid the restart trap
 

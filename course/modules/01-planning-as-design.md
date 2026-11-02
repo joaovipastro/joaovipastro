@@ -47,6 +47,14 @@ A Life Map divides your life into five to seven **areas**. Each area gets:
 - **A current standard**: an honest description of where it is today
 - **A role**: who you are when you're at your best in that area
 
+### Step 0 — Write the long list first
+
+Before you organise anything, let yourself want things. Set a timer for twelve minutes and write, without stopping, everything you'd like to be, do, have, learn, experience or give at some point in your life. Big and small. Practical and slightly absurd. Keep the pen moving and don't edit.
+
+Robbins uses a version of this exercise in *Awaken the Giant Within*, splitting the list into four headings — personal growth, career and business, experiences and possessions, and contribution — with a few fast minutes for each. Then, for each item, write how many years you'd give it: one, three, five, ten or twenty. Finally, circle the four or five one-year items that excite you most, and write a short paragraph on why you're absolutely committed to each.
+
+The point isn't the list itself. It's to remind yourself what you want before deciding what you'll do. You'll find your areas, visions and first Results hiding in it.
+
 ### Step 1 — Name your areas
 
 Common areas include health, relationships, family, finances, work, business, growth, home, contribution. Use whichever fit, but name them in your own words. Names that sound like you hold your attention far better than names that sound like a form.
@@ -79,6 +87,12 @@ One or two honest sentences. Not harsh, not flattering. *"I train when the week 
 
 The gap between the vision and the standard is where your plans will come from.
 
+#### Shoulds and musts
+
+There's a useful distinction here from Robbins. Most of what we'd like to improve lives in the category of *should*: I should train more, I should call the advisors, I should look at the margins. Shoulds rarely happen. What changes a life is when something moves from *should* to *must* — when you decide that the current standard is no longer acceptable to you.
+
+You won't do that for every area at once, and you shouldn't try. But as you write each current standard, ask: *"Is this still acceptable to me?"* The areas where the honest answer is *no* are where you'll find your energy for the next quarter.
+
 ### Step 4 — Name the role
 
 Who are you in this area when you're at your best? This sounds soft. It's one of the most practical tools in the course.
@@ -86,6 +100,10 @@ Who are you in this area when you're at your best? This sounds soft. It's one of
 *Commercial Leadership* might carry the role **The Trusted Advisor**. *The Coffee House* might carry **The Host** or **The Architect**. When you're unsure how to handle something in that area, the role tells you. A trusted advisor doesn't send a pushy follow-up. A host doesn't let the queue go unacknowledged.
 
 ---
+
+## Exercise 1.0 — The long list
+
+Do Step 0 before anything else: twelve uncensored minutes, timeframes beside each item, then circle your top four or five for the coming year and write a paragraph of reasons for each. Keep this list. You'll return to it at every Quarterly Review.
 
 ## Exercise 1.1 — Your Life Map (first draft)
 

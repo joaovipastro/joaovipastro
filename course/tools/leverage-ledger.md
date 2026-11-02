@@ -34,7 +34,30 @@ The work where my involvement makes a disproportionate difference:
 | 5 | | | | | | | |
 | | | | | | | **Total freed** | |
 
-**Levers:** Stop · Simplify · Systemise · Hand over
+**Levers:** Stop · Simplify · Systemise · Hand over · Borrow
+
+---
+
+## 80/20 map
+
+| | Produces a lot | Produces little |
+|---|---|---|
+| **Takes a lot of my time** | | |
+| **Takes little of my time** | | |
+
+---
+
+## Not-To-Do list
+
+Things I've decided I no longer do:
+
+1.
+2.
+3.
+4.
+5.
+6.
+7.
 
 **What I'll do with the freed hours:**
 

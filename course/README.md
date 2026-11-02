@@ -34,8 +34,9 @@ Everything else in the course is about asking those questions well, and building
 - A **Life Map**: the five to seven areas of your life, each with a one-line vision and a current standard
 - A **Weekly Mise en Place**: a 60-minute ritual that turns noise into a plan
 - A **Daily Card**: one page, three results, a short route for each
-- A **Leverage Ledger**: what you will stop doing, hand over, or systemise
+- A **Leverage Ledger**: what you will stop doing, hand over, or systemise — and a **Not-To-Do list**
 - A **Restoratives Menu**: the small things that reliably return you to your best state
+- A **Morning Rehearsal**: a few minutes to feel the day going well before it starts
 - A **Quarterly Review** that keeps the whole system honest
 
 ---
@@ -47,13 +48,13 @@ Seven modules. Each takes 30–45 minutes to read and complete, plus the practic
 | # | Module | Core idea | You'll produce |
 |---|---|---|---|
 | 0 | [Orientation](modules/00-orientation.md) | How to take this course | Your starting baseline |
-| 1 | [Planning as Design](modules/01-planning-as-design.md) | Planning decides what kind of life you're building, not just what you do today | Your Life Map (first draft) |
-| 2 | [Why Lists Fail](modules/02-why-lists-fail.md) | Lists hold tasks; they can't hold meaning. And time is felt, not just measured | A one-week Reactivity Audit |
+| 1 | [Planning as Design](modules/01-planning-as-design.md) | Planning decides what kind of life you're building, not just what you do today | Your long list + Life Map (first draft) |
+| 2 | [Why Lists Fail](modules/02-why-lists-fail.md) | Lists hold tasks; they can't hold meaning. And time is felt, not just measured | A Reactivity Audit + Not-To-Do list |
 | 3 | [The Three Questions](modules/03-the-three-questions.md) | Result, Reason, Route — and how to write each one well | Three fully written plans |
 | 4 | [From Capture to Commitment](modules/04-capture-to-commitment.md) | The weekly ritual: empty your head, group by result, commit to the essential few | Your first Weekly Mise en Place |
-| 5 | [Leverage](modules/05-leverage.md) | Your time should go where only you can add value | Your Leverage Ledger |
+| 5 | [Leverage](modules/05-leverage.md) | Your time should go where only you can add value | Your 80/20 map + Leverage Ledger |
 | 6 | [Time, Focus and State](modules/06-time-focus-state.md) | Your calendar is a statement of priorities; your state decides how well you execute | Time targets + Restoratives Menu |
-| 7 | [The Long Game](modules/07-the-long-game.md) | Rituals, reviews and resets that keep the system alive for years | Your Quarterly Review and daily rituals |
+| 7 | [The Long Game](modules/07-the-long-game.md) | Rituals, reviews and resets that keep the system alive for years | Your values, rules, rituals and Quarterly Review |
 
 ## Tools
 
@@ -68,13 +69,23 @@ Printable or copy-into-Notion templates:
 ## Support material
 
 - [Worked examples](examples/worked-examples.md) — the method applied to a luxury travel sales quarter, a specialty coffee shop, and a personal goal
-- [Thinking-partner prompts](prompts.md) — 50 prompts for working through the method with an AI or a coach
+- [Thinking-partner prompts](prompts.md) — 60 prompts for working through the method with an AI or a coach
 - [The first 30 days](30-day-plan.md) — a day-by-day implementation plan
+- [Sources and further reading](sources.md) — what each book contributes, and where
 
 ---
 
 ## A note on sources
 
-This course is an original work. It was designed after studying the structure and promises of Tony Robbins' *RPM (Rapid Planning Method) Fast-Track* course, and it shares that course's central conviction: that outcomes and purpose should come before tasks. The language, framework, exercises, tools and examples here are written independently, and draw on a wider body of practice — outcome-based planning, weekly reviews, time blocking, delegation and energy management — that many writers and practitioners have contributed to.
+This course is an original work. It was designed after studying the structure and promises of Tony Robbins' *RPM (Rapid Planning Method) Fast-Track* course, and it shares that course's central conviction: that outcomes and purpose should come before tasks.
 
-If you want to go to the source, the original RPM material is available from Robbins Research International.
+It draws on four books, each contributing a different layer:
+
+| Book | Layer |
+|---|---|
+| Tony Robbins, *Awaken the Giant Within* | The psychology: decisions, reasons, values, rules, state |
+| Laura Stack, *What to Do When There's Too Much to Do* | The operations: reduction, triage, processing, saying no |
+| Tracy Weaver, *Time Management and Productivity* | The tactics: 80/20, single-tasking, Parkinson's law |
+| Joe Dispenza, *Becoming Supernatural* | The inner practice: rehearsal, breathing, breaking routine |
+
+[Sources and further reading](sources.md) shows exactly where each idea appears in the course, with an honest view of each book's strengths and limits. All ideas are summarised in the course's own words.

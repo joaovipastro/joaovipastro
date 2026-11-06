@@ -21,13 +21,18 @@ single source of truth. The grade isn't reinterpreted from image to image.
 
 ## What the grade does, in order
 
-0. **White balance.** Removes the source's cast and adopts the reference's.
-1. **Tone.** Maps the luminance distribution onto the reference curve.
-2. **Hue families.** Pulls blues, golds, greens and reds toward the reference
-   hue and chroma, and tightens each family so it reads as one coherent colour.
-3. **Saturation.** Brings overall chroma to the reference level, with a soft ceiling.
-4. **Split toning.** Neutrals take the reference tint: cool teal shadows,
-   cool blue-white highlights.
+0. **Sky detection.** Finds sky connected to the top edge. Sky and land are
+   graded separately.
+1. **White balance.** Whites become the cover's warm-neutral facade white
+   (Lab 66, 1, 3), not the blue of its sky.
+2. **Tone.** Maps the land's luminance onto the cover's land curve.
+3. **Hue families.** Pulls blues, golds, greens and reds toward the cover's hue
+   and chroma (damped, so nothing goes neon). Golds are locked at the cover's
+   honeyed hue (~84°) and never drift to lemon or green.
+4. **Saturation.** Brings chroma toward the cover's level, with a per-family soft ceiling.
+5. **Shadows.** A light teal-slate cast, as in the cover's roofs and river.
+6. **Sky.** Overcast white sky takes the cover's haze gradient: `#A1C3DC` at
+   the top to `#D2E1F0` at the horizon. Blue skies are left to step 3.
 
 It changes colour and tone only. It never crops, retouches, adds or removes anything.
 
@@ -45,3 +50,6 @@ python3 grading/grade.py photo1.jpg photo2.heic -o grading/output --compare
 Grading carries colour, tone and saturation. It can't create what isn't in the
 frame: haze for depth, a blue sky on an overcast day, or autumn foliage in a
 summer shot. Images like that are flagged, not forced.
+
+Overcast photos come out softer than the cover (mean C\* ~10–24 against ~27).
+That's deliberate: pushing flat light to sunlit saturation looks artificial.

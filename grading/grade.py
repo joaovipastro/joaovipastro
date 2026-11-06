@@ -25,7 +25,7 @@ import os
 import sys
 
 import numpy as np
-from PIL import Image, ImageCms, ImageOps
+from PIL import Image, ImageCms, ImageFilter, ImageOps
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 REF_IMG = os.path.join(HERE, "reference", "outono-ao-longo-dos-rios.jpg")
@@ -105,21 +105,62 @@ def hue_diff(a, b):
     return (a - b + 180) % 360 - 180
 
 
-# ------------------------------------------------------------------ profiling
-def profile(lab):
-    """Measure the statistics the grade matches."""
+# ---------------------------------------------------------------------- grade
+WARM_WHITE_AB = (1.0, 3.0)   # the cover's sunlit church facade: Lab(66, 1, 3)
+SKY_TOP = (80.0, -4.0, -16.0)     # cover sky behind the title  (#A1C3DC)
+SKY_HORIZON = (89.0, -2.0, -9.0)  # cover horizon haze          (#D2E1F0)
+
+
+def sky_mask(lab):
+    """Soft mask of sky: bright neutral or blue pixels connected to the top edge."""
+    H, W = lab.shape[:2]
+    step = max(1, W // 400)
+    sm = lab[::step, ::step]
+    L = sm[..., 0]
+    C, h = lch(sm)
+    cand = ((L > 68) & (C < 16)) | ((L > 45) & (C > 8) & (h > 200) & (h < 300))
+    m = np.zeros_like(cand)
+    m[0] = cand[0]
+    for _ in range(2000):
+        g = m.copy()
+        g[1:] |= m[:-1]
+        g[:-1] |= m[1:]
+        g[:, 1:] |= m[:, :-1]
+        g[:, :-1] |= m[:, 1:]
+        g &= cand
+        if (g == m).all():
+            break
+        m = g
+    im = Image.fromarray((m * 255).astype(np.uint8)).resize((W, H), Image.BILINEAR)
+    im = im.filter(ImageFilter.GaussianBlur(2))
+    mask = np.asarray(im).astype(np.float64) / 255
+    # keep the mask off roofs and timber at full resolution
+    Lf = lab[..., 0]
+    Cf, hf = lch(lab)
+    soft = np.clip((Lf - 55) / 15, 0, 1)
+    return mask * soft
+
+
+def profile(lab, sky=None):
+    """Measure the statistics the grade matches (sky excluded from tone and neutrals)."""
+    if sky is None:
+        sky = sky_mask(lab)
     flat = lab.reshape(-1, 3)
+    skyf = sky.reshape(-1)
+    rng = np.random.default_rng(0)
     if len(flat) > 400_000:
-        flat = flat[np.random.default_rng(0).choice(len(flat), 400_000, replace=False)]
+        idx = rng.choice(len(flat), 400_000, replace=False)
+        flat, skyf = flat[idx], skyf[idx]
     L = flat[:, 0]
     C, h = lch(flat)
+    land = skyf < 0.5
     p = {
-        "L_quantiles": np.percentile(L, np.linspace(0, 100, 101)).tolist(),
-        "C_mean": float(C.mean()),
+        "L_quantiles": np.percentile(L[land], np.linspace(0, 100, 101)).tolist(),
+        "C_mean": float(C[land].mean()),
         "families": {},
         "neutral_ab": [],
     }
-    chromatic = C > 8
+    chromatic = (C > 8) & land
     for name, (lo, hi) in FAMILIES.items():
         m = chromatic & (((h - lo) % 360) < (hi - lo))
         if m.sum() < 50:
@@ -131,9 +172,8 @@ def profile(lab):
             "chroma": float(np.median(C[m])),
             "chroma_p90": float(np.percentile(C[m], 90)),
         }
-    # tint of near-neutrals per luminance band (split toning)
     for lo, hi in zip(L_BANDS[:-1], L_BANDS[1:]):
-        m = (L >= lo) & (L < hi) & (C < 15)
+        m = land & (L >= lo) & (L < hi) & (C < 15)
         if m.sum() < 50:
             p["neutral_ab"].append([0.0, 0.0])
         else:
@@ -142,7 +182,8 @@ def profile(lab):
 
 
 def reference_profile():
-    if os.path.exists(REF_JSON) and os.path.getmtime(REF_JSON) >= os.path.getmtime(REF_IMG):
+    if os.path.exists(REF_JSON) and os.path.getmtime(REF_JSON) >= max(
+            os.path.getmtime(REF_IMG), os.path.getmtime(__file__)):
         with open(REF_JSON) as f:
             return json.load(f)
     p = profile(rgb2lab(load_srgb(REF_IMG)))
@@ -151,35 +192,32 @@ def reference_profile():
     return p
 
 
-# ---------------------------------------------------------------------- grade
-def neutral_cast(p):
-    """Median tint of near-neutral mid/high tones (bands 35-101)."""
-    ab = np.array(p["neutral_ab"][2:])
-    return ab.mean(0)
-
-
 def grade(rgb, ref, strength=1.0, protect_skin=False):
     lab = rgb2lab(rgb)
-    # 0. White balance: remove the source cast, adopt the reference's.
-    cast = (neutral_cast(profile(lab)) - neutral_cast(ref)) * strength
+    sky = sky_mask(lab)
+    land = 1 - sky
+
+    # 0. White balance: whites become the cover's warm-neutral facade white.
+    src0 = profile(lab, sky)
+    mids = np.array(src0["neutral_ab"][3:5]).mean(0)          # L* 50-85 neutrals
+    cast = (mids - np.array(WARM_WHITE_AB)) * strength
     lab[..., 1] -= cast[0]
     lab[..., 2] -= cast[1]
-    src = profile(lab)
+    src = profile(lab, sky)
     out = lab.copy()
     L = lab[..., 0]
     C, h = lch(lab)
 
-    # 1. Tone: map the luminance distribution onto the reference curve.
-    sq = np.array(src["L_quantiles"])
+    # 1. Tone: map the land's luminance distribution onto the cover's land curve.
+    sq = np.maximum.accumulate(np.array(src["L_quantiles"]) + np.arange(101) * 1e-6)
     rq = np.array(ref["L_quantiles"])
-    sq = np.maximum.accumulate(sq + np.arange(101) * 1e-6)
     L_new = np.interp(L, sq, rq)
-    tone_k = 0.75 * strength
-    out[..., 0] = L + (L_new - L) * tone_k
+    out[..., 0] = L + (L_new - L) * 0.7 * strength * land
 
-    # 2. Hue families: pull each family's hue and chroma toward the reference.
+    # 2. Hue families: pull hue and chroma toward the cover (chroma damped).
     dh = np.zeros_like(C)
     cs = np.zeros_like(C)
+    ceil = np.zeros_like(C)
     wsum = np.zeros_like(C)
     for name, (lo, hi) in FAMILIES.items():
         s = src["families"].get(name)
@@ -189,45 +227,62 @@ def grade(rgb, ref, strength=1.0, protect_skin=False):
         centre = s["hue"]
         width = (hi - lo) / 2
         w = np.exp(-0.5 * (hue_diff(h, centre) / width) ** 2)
-        shift = hue_diff(r["hue"], s["hue"])
-        # also tighten the family around its centre (one coherent gold, one blue)
-        tighten = -0.35 * hue_diff(h, centre)
+        shift = 0.8 * hue_diff(r["hue"], s["hue"])
+        tighten = -0.3 * hue_diff(h, centre)
         dh += w * (shift + tighten)
-        scale = np.clip(r["chroma"] / max(s["chroma"], 1e-3), 0.6, 1.5)
+        scale = np.clip(np.sqrt(r["chroma"] / max(s["chroma"], 1e-3)), 0.75, 1.35)
         cs += w * scale
+        ceil += w * r["chroma_p90"] * 1.1
         wsum += w
     has = wsum > 1e-6
     dh = np.where(has, dh / np.maximum(wsum, 1e-6), 0)
     cs = np.where(has, cs / np.maximum(wsum, 1e-6), 1)
+    ceil = np.where(has, ceil / np.maximum(wsum, 1e-6), 60)
 
-    chroma_w = np.clip((C - 4) / 10, 0, 1)        # leave true neutrals to step 3
+    chroma_w = np.clip((C - 5) / 10, 0, 1)
     if protect_skin:
-        skin = (h > 30) & (h < 75) & (C > 10) & (C < 45) & (L > 35) & (L < 85)
-        chroma_w = np.where(skin, chroma_w * 0.25, chroma_w)
-    k = strength * chroma_w
+        skin = (h > 30) & (h < 75) & (C > 10) & (C < 45) & (L > 30) & (L < 85)
+        chroma_w = np.where(skin, chroma_w * 0.2, chroma_w)
+    k = strength * chroma_w * land
     h2 = (h + dh * k) % 360
+    # Gold guard: the cover's gold is honeyed (hue ~84). Yellows never drift
+    # toward lemon or green; anything already past it is drawn back.
+    GOLD_MAX = ref["families"]["gold"]["hue"] + 2 if ref["families"].get("gold") else 86
+    gold_zone = (h > 50) & (h < 125)
+    h2 = np.where(gold_zone & (h2 > GOLD_MAX) & (h <= GOLD_MAX), GOLD_MAX, h2)
+    over = gold_zone & (h > GOLD_MAX)
+    h2 = np.where(over, h - (h - GOLD_MAX) * 0.6 * k, h2)
     C2 = C * (1 + (cs - 1) * k)
 
-    # 3. Global chroma: settle at the reference richness.
-    gscale = np.clip(ref["C_mean"] / max(np.mean(C2), 1e-3), 0.85, 1.2)
-    C2 = C2 * (1 + (gscale - 1) * strength)
-    # soft ceiling at the reference's own peak chroma
-    peak = max(f["chroma_p90"] for f in ref["families"].values() if f) * 1.15
-    C2 = np.where(C2 > peak, peak + (C2 - peak) * 0.35, C2)
-
+    # 3. Global chroma toward the cover's richness, with a per-family soft ceiling.
+    land_mean = (C2 * land).sum() / max(land.sum(), 1)
+    gscale = np.clip(ref["C_mean"] / max(land_mean, 1e-3), 0.9, 1.15)
+    C2 = C2 * (1 + (gscale - 1) * strength * land)
+    C2 = np.where(C2 > ceil, ceil + (C2 - ceil) * 0.3, C2)
     out[..., 1] = C2 * np.cos(np.radians(h2))
     out[..., 2] = C2 * np.sin(np.radians(h2))
 
-    # 4. Split toning of neutrals: cool teal shadows, cool blue-white highlights.
+    # 4. Shadows: a light teal-slate cast, as in the cover's roofs and river.
     Lb = out[..., 0]
-    centres = [(lo + hi) / 2 for lo, hi in zip(L_BANDS[:-1], L_BANDS[1:])]
-    ra = np.interp(Lb, centres, [x[0] for x in ref["neutral_ab"]])
-    rb = np.interp(Lb, centres, [x[1] for x in ref["neutral_ab"]])
-    sa = np.interp(Lb, centres, [x[0] for x in src["neutral_ab"]])
-    sb = np.interp(Lb, centres, [x[1] for x in src["neutral_ab"]])
-    nw = np.exp(-C / 12) * strength
-    out[..., 1] += (ra - sa) * nw
-    out[..., 2] += (rb - sb) * nw
+    shadow = np.clip((40 - Lb) / 25, 0, 1) * np.exp(-C / 10) * 0.6 * strength * land
+    out[..., 1] += -5.0 * shadow
+    out[..., 2] += -2.5 * shadow
+
+    # 5. Sky: neutral (overcast) sky takes the cover's haze gradient, top to horizon.
+    Hh = lab.shape[0]
+    rows = np.where(sky.max(1) > 0.5)[0]
+    if len(rows):
+        bottom = max(np.percentile(rows, 98), 1)
+        t = np.clip(np.arange(Hh) / bottom, 0, 1)[:, None]
+        tL = SKY_TOP[0] + (SKY_HORIZON[0] - SKY_TOP[0]) * t
+        ta = SKY_TOP[1] + (SKY_HORIZON[1] - SKY_TOP[1]) * t
+        tb = SKY_TOP[2] + (SKY_HORIZON[2] - SKY_TOP[2]) * t
+        skyL = L[sky > 0.5]
+        med = np.median(skyL) if skyL.size else 90
+        neutral_sky = sky * np.clip((16 - C) / 8, 0, 1) * 0.9 * strength
+        out[..., 0] = out[..., 0] * (1 - neutral_sky) + (tL + (L - med) * 0.8) * neutral_sky
+        out[..., 1] = out[..., 1] * (1 - neutral_sky) + ta * neutral_sky
+        out[..., 2] = out[..., 2] * (1 - neutral_sky) + tb * neutral_sky
 
     return lab2rgb(out)
 

@@ -35,8 +35,10 @@ The slash commands in `.claude/commands/` define `/dump`, `/today`, `/done`, `/w
 
 ## Reminders and calendar (only when asked or offered and accepted)
 
-- Items with a specific time or date can be pushed to **Todoist** (reminders) or **Google Calendar** (time blocks) via connectors. Offer this once per capture when relevant, e.g. "Want a reminder at 9:00 Friday?". Never push without a yes.
-- Note the push on the item: `· todoist ✓` / `· cal ✓`.
+- **Default calendar: Google Calendar `joaovip@gmail.com`** (decided 2026-11-06). It syncs to his Apple Calendar on iPhone/Mac. Do not use .ics files any more.
+- Standing approval: when a capture or `/today` produces items with a specific day and time, create the events on that calendar without asking, with a 15-min popup reminder and short notes in the description. Then report what was added. Items with a date but no time get a proposed time slot first, which he confirms.
+- Never write to any other calendar (e.g. `info@cruisefest.info`, which is the business account currently connected) unless he says so for that item.
+- Note the push on the item: `· cal ✓` (or `· todoist ✓` for Todoist reminders, which still need a yes).
 
 ## Behaviour as a partner
 

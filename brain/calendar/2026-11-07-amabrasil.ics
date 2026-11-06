@@ -1,0 +1,71 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Joao Brain//Compass//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:AmaBrasil content day
+BEGIN:VEVENT
+UID:5ba1c6b6-9551-403e-b82a-63759999c49f@compass
+DTSTAMP:20261106T200000Z
+DTSTART:20261107T080000
+DTEND:20261107T093000
+SUMMARY:🎥 Suite shoot: video walkthrough + photos
+DESCRIPTION:Available suite. Shoot before anything changes. Wide, details, view from the bed/balcony, bathroom. Slow, steady walkthrough.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:a1df1970-1fd8-4fab-bcc7-59c607f4ad90@compass
+DTSTAMP:20261106T200000Z
+DTSTART:20261107T103000
+DTEND:20261107T113000
+SUMMARY:🎙 Main video: AmaBrasil concept + AmaWaterways
+DESCRIPTION:Talking-head. 3–4 talking points, not a script. Quiet spot, natural light, mic check first.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:6068e73f-cf05-4028-99ac-73e3c97b4f70@compass
+DTSTAMP:20261106T200000Z
+DTSTART:20261107T160000
+DTEND:20261107T170000
+SUMMARY:💬 Guest testimonials + feedback
+DESCRIPTION:Back-to-back quick clips. Get consent / image release first. Same 4 questions for everyone. Note written feedback in the same pass.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:ff447f6f-9d57-4754-b20d-cabd77b39977@compass
+DTSTAMP:20261106T200000Z
+DTSTART:20261107T170000
+DTEND:20261107T180000
+SUMMARY:📸 Ship photography, golden hour
+DESCRIPTION:Exteriors, decks, public spaces, details. Starts about 1h before sunset, so adjust to local sunset.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:8f9a3b26-e801-482f-a7ed-a14c4d894aa7@compass
+DTSTAMP:20261106T200000Z
+DTSTART:20261107T220000
+DTEND:20261107T221500
+SUMMARY:💾 Back up all footage
+DESCRIPTION:Phone + camera to cloud/drive before bed.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Reminder
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

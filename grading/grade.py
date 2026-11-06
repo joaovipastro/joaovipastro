@@ -109,6 +109,7 @@ def hue_diff(a, b):
 WARM_WHITE_AB = (1.0, 3.0)   # the cover's sunlit church facade: Lab(66, 1, 3)
 SKY_TOP = (80.0, -4.0, -16.0)     # cover sky behind the title  (#A1C3DC)
 SKY_HORIZON = (89.0, -2.0, -9.0)  # cover horizon haze          (#D2E1F0)
+SKY_DEEP = (66.0, -7.0, -30.0)    # toward the cover's upper sky (#4192C9 side)
 
 
 def sky_mask(lab):
@@ -192,7 +193,7 @@ def reference_profile():
     return p
 
 
-def grade(rgb, ref, strength=1.0, protect_skin=False):
+def grade(rgb, ref, strength=1.0, protect_skin=False, saturation=0.0):
     lab = rgb2lab(rgb)
     sky = sky_mask(lab)
     land = 1 - sky
@@ -258,6 +259,11 @@ def grade(rgb, ref, strength=1.0, protect_skin=False):
     land_mean = (C2 * land).sum() / max(land.sum(), 1)
     gscale = np.clip(ref["C_mean"] / max(land_mean, 1e-3), 0.9, 1.15)
     C2 = C2 * (1 + (gscale - 1) * strength * land)
+    # Optional push toward the cover's full richness (0 = natural, 1 = cover level).
+    if saturation > 0:
+        land_mean = (C2 * land).sum() / max(land.sum(), 1)
+        extra = np.clip(ref["C_mean"] / max(land_mean, 1e-3), 1.0, 1.8) ** saturation
+        C2 = C2 * (1 + (extra - 1) * land * np.clip((C2 - 3) / 8, 0, 1))
     C2 = np.where(C2 > ceil, ceil + (C2 - ceil) * 0.3, C2)
     out[..., 1] = C2 * np.cos(np.radians(h2))
     out[..., 2] = C2 * np.sin(np.radians(h2))
@@ -274,15 +280,22 @@ def grade(rgb, ref, strength=1.0, protect_skin=False):
     if len(rows):
         bottom = max(np.percentile(rows, 98), 1)
         t = np.clip(np.arange(Hh) / bottom, 0, 1)[:, None]
-        tL = SKY_TOP[0] + (SKY_HORIZON[0] - SKY_TOP[0]) * t
-        ta = SKY_TOP[1] + (SKY_HORIZON[1] - SKY_TOP[1]) * t
-        tb = SKY_TOP[2] + (SKY_HORIZON[2] - SKY_TOP[2]) * t
+        top = np.array(SKY_TOP) + (np.array(SKY_DEEP) - np.array(SKY_TOP)) * saturation
+        tL = top[0] + (SKY_HORIZON[0] - top[0]) * t
+        ta = top[1] + (SKY_HORIZON[1] - top[1]) * t
+        tb = top[2] + (SKY_HORIZON[2] - top[2]) * t
         skyL = L[sky > 0.5]
         med = np.median(skyL) if skyL.size else 90
         neutral_sky = sky * np.clip((16 - C) / 8, 0, 1) * 0.9 * strength
         out[..., 0] = out[..., 0] * (1 - neutral_sky) + (tL + (L - med) * 0.8) * neutral_sky
         out[..., 1] = out[..., 1] * (1 - neutral_sky) + ta * neutral_sky
         out[..., 2] = out[..., 2] * (1 - neutral_sky) + tb * neutral_sky
+        rgb_out = lab2rgb(out)
+        # Smooth the sky: tinting exposes JPEG blocking from phone files.
+        im = Image.fromarray((rgb_out * 255 + 0.5).astype(np.uint8))
+        blur = np.asarray(im.filter(ImageFilter.GaussianBlur(8))).astype(np.float64) / 255
+        w = (neutral_sky / max(0.9 * strength, 1e-6))[..., None].clip(0, 1)
+        return rgb_out * (1 - w) + blur * w
 
     return lab2rgb(out)
 
@@ -310,13 +323,15 @@ def main():
     ap.add_argument("-o", "--outdir", default=os.path.join(HERE, "output"))
     ap.add_argument("--strength", type=float, default=1.0)
     ap.add_argument("--protect-skin", action="store_true")
+    ap.add_argument("--saturation", type=float, default=0.0,
+                    help="0 natural (default) .. 1 full cover richness")
     ap.add_argument("--compare", action="store_true", help="also write a before/after sheet")
     args = ap.parse_args()
     os.makedirs(args.outdir, exist_ok=True)
     ref = reference_profile()
     for path in args.inputs:
         rgb = load_srgb(path)
-        out = grade(rgb, ref, args.strength, args.protect_skin)
+        out = grade(rgb, ref, args.strength, args.protect_skin, args.saturation)
         stem = os.path.splitext(os.path.basename(path))[0]
         dst = os.path.join(args.outdir, f"{stem}_graded.jpg")
         save(out, dst)
